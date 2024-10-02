@@ -27,16 +27,22 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		if(osName.contains("linux")) {
 			System.out.println("리눅스");
 			saveDir = "/app/upload/";
+			registry.addResourceHandler("/upload/**")
+			.addResourceLocations("file:"+saveDir);
+			
+			
 		}else if(osName.contains("windows")){
 			System.out.println("윈도우");
-			saveDir = "C:\\app\\upload\\";
+			saveDir = "/app/upload/";
 			registry.addResourceHandler("/upload/**")
-			.addResourceLocations("file"+saveDir);
+			.addResourceLocations("file:"+saveDir);
+			
+			
 		}else if(osName.contains("mac")){
 			System.out.println("Mac");
 			saveDir = "/app/upload/";
 			registry.addResourceHandler("/upload/**")
-			.addResourceLocations("file"+saveDir);
+			.addResourceLocations("file:"+saveDir);
 		}
 		      
 	}
