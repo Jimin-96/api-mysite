@@ -4,7 +4,7 @@ on:
   push: 
     branches: 
       - master # Trigger on push to master branch
-#check
+
 jobs: 
   build-and-deploy: 
     runs-on: ubuntu-latest 
@@ -50,7 +50,7 @@ jobs:
             sudo docker stop mysite || true
             sudo docker rm mysite || true
             sudo docker run -d \
-              —-name mysite \
+              --name mysite \  # 여기에 잘못된 하이픈 수정
               -p 9000:9000 \
               -v /home/ec2-user/upload:/app/upload \
               jimin96/mysite:latest
