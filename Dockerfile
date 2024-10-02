@@ -8,5 +8,5 @@ WORKDIR /app
 COPY target/api-mysite1-0.0.1-SNAPSHOT.jar /app/api-mysite1.jar
 
 # 컨테이너가 시작될 때 실행될 명령어 설정
-ENTRYPOINT ["java", "-jar", "/app/api-ㅡmysite1.jar"]
+ENTRYPOINT ["java", "-jar", "/app/api-mysite1.jar"]
 
