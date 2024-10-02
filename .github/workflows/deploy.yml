@@ -50,7 +50,7 @@ jobs:
             sudo docker stop mysite || true
             sudo docker rm mysite || true
             sudo docker run -d \
-              —name mysite \
+              —-name mysite \
               -p 9000:9000 \
               -v /home/ec2-user/upload:/app/upload \
               jimin96/mysite:latest
