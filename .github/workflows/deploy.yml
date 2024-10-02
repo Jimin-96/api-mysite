@@ -53,4 +53,4 @@ jobs:
               —name mysite \
               -p 9000:9000 \
               -v /home/ec2-user/upload:/app/upload \
-              yuchankim/mysite:latest
+              jimin96/mysite:latest
