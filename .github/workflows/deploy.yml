@@ -53,4 +53,4 @@ jobs:
               --name mysite \  # 여기에 잘못된 하이픈 수정
               -p 9000:9000 \
               -v /home/ec2-user/upload:/app/upload \
-              jimin96/mysite:latest
+              jimin96/mysite:latest 
