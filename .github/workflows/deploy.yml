@@ -3,7 +3,7 @@ name: Deploy mysite App
 on: 
   push: 
     branches: 
-      - master # Trigger on push to master branch
+      - master
 
 jobs: 
   build-and-deploy: 
@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2 # Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
       - name: Build with Maven
         run: mvn clean package
@@ -49,8 +49,4 @@ jobs:
             sudo docker pull jimin96/mysite:latest 
             sudo docker stop mysite || true
             sudo docker rm mysite || true
-            sudo docker run -d \
-              --name mysite \  # 여기에 잘못된 하이픈 수정
-              -p 9000:9000 \
-              -v /home/ec2-user/upload:/app/upload \
-              jimin96/mysite:latest 
+            sudo docker run -d --name mysite -p 9000:9000 -v /home/ec2-user/upload:/app/upload jimin96/mysite:latest
